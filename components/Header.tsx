@@ -3,20 +3,24 @@ import Link from "next/link";
 import Darkmode from "./Darkmode";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
-import { headers } from "next/headers";
+
+const className = {
+  spanHover : "absolute left-0 bottom-0 w-full h-0.5 transition-all bg-orange-600 z-0 group-hover:h-full "
+}
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleMenu = () => {
-
     setOpen(!isOpen);
   };
 
   return (
-    <header className="border-b-[1px] border-black dark:border-white">
-      <div className="flex justify-between items-center h-14 px-4 py-2 ">
-        <Link href="/">
+    <>
+      <header
+        className={` -full bg-inherit border-b-[1px] border-black dark:border-white`}
+      >
+        <div className="flex justify-between items-center h-14 px-4 py-2 ">
           <div>
             <svg
               id="logo-88"
@@ -35,31 +39,87 @@ const Header = () => {
               ></path>
             </svg>
           </div>
-        </Link>
-        <div className="flex items-center gap-2">
-          <Darkmode />
-          <button className="md:hidden" onClick={toggleMenu}>
-            <Hamburger
-              rounded
-              size={22}
-              distance="md"
-              toggled={isOpen}
-              toggle={setOpen}
-            />
-          </button>
-        </div>
-      </div>
-      {/* have to animate the drawer */}
-      {isOpen && (
-        <nav className="py-4 xl:hidden">
-          <div className="px-4 m-auto ">
-            <div>
+          <div className="flex items-center gap-3">
+            <Darkmode />
+            <button className="md:hidden" onClick={toggleMenu}>
+              <Hamburger
+                rounded
+                size={22}
+                distance="md"
+                toggled={isOpen}
+                toggle={setOpen}
+              />
+            </button>
+            <div className="hidden md:flex text-lg gap-4-">
+              <p className="my-6 group relative w-max">
+                <span className="px-1 relative z-10 group-hover:text-white">
+                  Bio
+                </span>
+                <span className={className.spanHover}></span>
+              </p>
+              <p className="text-lg my-6 group relative w-max">
+                <span className="px-1 relative z-10 group-hover:text-white">
+                  Projects
+                </span>
+                <span className={className.spanHover}></span>
+              </p>
+              <p className="text-lg my-6 group relative w-max">
+                <span className="px-1 relative z-10 group-hover:text-white">
+                  Open Source
+                </span>
+                <span className={className.spanHover}></span>
+              </p>
+              <p className="my-6 group relative w-max">
+                <span className="px-1 relative z-10 group-hover:text-white">
+                  Contact
+                </span>
+                <span className={className.spanHover}></span>
+              </p>
               
             </div>
           </div>
-        </nav>
-      )}
-    </header>
+        </div>
+        {/* have to animate the drawer */}
+        {isOpen && (
+          <nav className="py-4 md:hidden">
+            <div className="px-4 mx-auto sm:px-6 lg:px-8">
+              <div>
+                <div className="flex flex-col items-center space-y-2 md:flex-row">
+                  <Link
+                    className="underline-offset-2 hover:underline"
+                    href="#"
+                    title="Features"
+                  >
+                    Bio
+                  </Link>
+                  <Link
+                    className="underline-offset-2 hover:underline"
+                    href="#"
+                    title="Solutions"
+                  >
+                    Project
+                  </Link>
+                  <Link
+                    className="underline-offset-2 hover:underline"
+                    href="#"
+                    title="Resources"
+                  >
+                    Open Source
+                  </Link>
+                  <Link
+                    className="underline-offset-2 hover:underline"
+                    href="#"
+                    title="Pricing"
+                  >
+                    Contact
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </nav>
+        )}
+      </header>
+    </>
   );
 };
 export default Header;
