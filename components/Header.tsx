@@ -50,7 +50,7 @@ const Header = () => {
                 toggle={setOpen}
               />
             </button>
-            <div className="hidden md:flex text-lg gap-4-">
+            <div className="hidden md:flex text-lg gap-4">
               <p className="my-6 group relative w-max">
                 <span className="px-1 relative z-10 group-hover:text-white">
                   Bio
