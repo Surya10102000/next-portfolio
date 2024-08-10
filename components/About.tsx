@@ -4,12 +4,12 @@ import LinkButton from "./LinkButton";
 
 const About = () => {
   return (
-    <div className="min-h-[50vh] mt-10 pb-8bg-orange-500 dark:bg-orange-700">
+    <div className="min-h-[50vh] mt-10 pb-8 bg-orange-600 dark:bg-orange-700">
       <div className="max-w-3xl mx-auto flex flex-col items-center px-4 py-12">
         <h1 className="text-3xl font-bold tracking-wide text-center">
           Hello world!
         </h1>
-        <p className="text-center font-normal pt-6">
+        <p className=" text-center font-normal pt-6">
           After starting my coding journey almost 10 years ago with an
           undergraduate class introducing C++, I have decided to make a bold
           career move into web development. I am a problem solver, curious, and
@@ -24,6 +24,6 @@ const About = () => {
       </div>
     </div>
   );
-  // How can i change the colour using framer motion
+
 };
 export default About;

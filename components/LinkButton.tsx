@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 const social = [
   {
@@ -54,8 +53,8 @@ const social = [
 const LinkButton = () => {
   return (
     <>
-      {social.map((x) => (
-        <div className="border-gray-800  dark:border-gray-300 duration-300 p-2 rounded-full border-2 hover:border-gray-950 dark:hover:border-gray-50">
+      {social.map((x,i) => (
+        <div key={i} className="border-gray-800  dark:border-gray-300 duration-300 p-2 rounded-full border-2 hover:border-gray-950 dark:hover:border-gray-50">
           <a href={x.href} target="_blank">{x.logo}</a>
         </div>
       ))}
