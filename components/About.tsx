@@ -4,7 +4,7 @@ import LinkButton from "./LinkButton";
 
 const About = () => {
   return (
-    <div className="min-h-[50vh] mt-10 pb-8 bg-orange-600 dark:bg-orange-700">
+    <div className="min-h-[50vh] mt-10 pb-8 bg-gradient-to-r from-red-600 to-orange-500">
       <div className="max-w-3xl mx-auto flex flex-col items-center px-4 py-12">
         <h1 className="text-3xl font-bold tracking-wide text-center">
           Hello world!

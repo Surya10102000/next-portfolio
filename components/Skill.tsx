@@ -10,7 +10,7 @@ const Skill = () => {
         </div>
         <div className="grid grid-cols-2 gap-2 py-4 px-8">
           {languages.map((x, i) => (
-            <div >
+            <div key={i} >
               <div className="mx-auto w-12 text-center">{x.icon}</div>
               <div className="mx-auto text-sm font-light text-center mt-1">{x.text}</div>
             </div>
@@ -24,7 +24,7 @@ const Skill = () => {
         </div>
         <div className="grid grid-cols-2 gap-2 py-4 px-8">
           {frameworks.map((x, i) => (
-            <div className="">
+            <div key={i}>
               <div className="mx-auto w-12 text-center">{x.icon}</div>
               <div className="mx-auto text-sm font-light text-center mt-1">{x.text}</div>
             </div>
@@ -38,7 +38,7 @@ const Skill = () => {
         </div>
         <div className="grid grid-cols-2 gap-2 py-4 px-8">
           {tools.map((x, i) => (
-            <div>
+            <div key={i}>
               <div className="mx-auto w-12 text-center">{x.icon}</div>
               <div className="mx-auto text-sm font-light text-center mt-1">{x.text}</div>
             </div>
