@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={` -full bg-inherit border-b-[1px] border-black dark:border-white`}
+        className={` bg-inherit border-b-[1px] border-black dark:border-white`}
       >
         <div className="flex justify-between items-center h-14 px-4 py-2 ">
           <div>
@@ -81,7 +81,7 @@ const Header = () => {
         </div>
         {/* have to animate the drawer */}
         {isOpen && (
-          <nav className="py-4 md:hidden">
+          <nav className=" py-4 md:hidden">
             <div className="px-4 mx-auto sm:px-6 lg:px-8">
               <div>
                 <div className="flex flex-col items-center space-y-2 md:flex-row">
