@@ -1,9 +1,19 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
+import {motion} from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className="pt-24 flex flex-col justify-center items-center">
+    <motion.div
+    initial={{
+      y : 40,
+      opacity : 0
+    }}
+    animate={{
+      y : 0,
+      opacity : 1
+    }}
+    className="pt-24 flex flex-col justify-center items-center">
       <div className="flex flex-col items-center">
         <div className="italic text-2xl md:text-3xl  font-extrabold my-4 md:mb-8">
           <p className="relative -left-3 text-gray-400 dark:text-gray-900">
@@ -52,7 +62,7 @@ const Hero = () => {
           />
         </svg>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Hero;

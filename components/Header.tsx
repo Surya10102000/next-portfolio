@@ -3,10 +3,12 @@ import Link from "next/link";
 import Darkmode from "./Darkmode";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const className = {
-  spanHover : "absolute left-0 bottom-0 w-full h-0.5 transition-all bg-orange-600 z-0 group-hover:h-full "
-}
+  spanHover:
+    "absolute left-0 bottom-0 w-full h-0.5 transition-all bg-orange-600 z-0 group-hover:h-full ",
+};
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -17,7 +19,13 @@ const Header = () => {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{
+          y: -100,
+        }}
+        animate={{
+          y: 0,
+        }}
         className={` bg-inherit border-b-[1px] border-black dark:border-white`}
       >
         <div className="flex justify-between items-center h-14 px-4 py-2 ">
@@ -75,13 +83,18 @@ const Header = () => {
                 </span>
                 <span className={className.spanHover}></span>
               </p>
-              
             </div>
           </div>
         </div>
         {/* have to animate the drawer */}
+
         {isOpen && (
-          <nav className=" py-4 md:hidden">
+          <motion.nav
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            className=" py-4 md:hidden"
+          >
             <div className="px-4 mx-auto sm:px-6 lg:px-8">
               <div>
                 <div className="flex flex-col items-center space-y-2 md:flex-row">
@@ -116,9 +129,9 @@ const Header = () => {
                 </div>
               </div>
             </div>
-          </nav>
+          </motion.nav>
         )}
-      </header>
+      </motion.header>
     </>
   );
 };

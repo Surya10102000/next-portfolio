@@ -1,10 +1,20 @@
 "use client";
 
 import LinkButton from "./LinkButton";
-
+import { motion } from "framer-motion";
 const About = () => {
   return (
-    <div className="min-h-[50vh] mt-10 pb-8 bg-gradient-to-r from-red-600 to-orange-500">
+    <motion.div
+      initial={{
+        y: 40,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      className="min-h-[50vh] mt-10 pb-8 bg-gradient-to-r from-red-600 to-orange-500"
+    >
       <div className="max-w-3xl mx-auto flex flex-col items-center px-4 py-12">
         <h1 className="text-3xl font-bold tracking-wide text-center">
           Hello world!
@@ -19,11 +29,10 @@ const About = () => {
           opportunities or people to share ideas with!
         </p>
         <div className="flex mt-4 gap-4">
-          <LinkButton/>
-        </div>   
+          <LinkButton />
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
-
 };
 export default About;
