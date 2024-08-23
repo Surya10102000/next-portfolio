@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <motion.div
+    id="bio"
       initial={{
         y: 40,
         opacity: 0,

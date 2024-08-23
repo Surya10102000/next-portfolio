@@ -59,30 +59,29 @@ const Header = () => {
               />
             </button>
             <div className="hidden md:flex text-lg gap-4">
-              <p className="cursor-pointer my-6 group relative w-max">
-                <span className="px-1 relative z-10 group-hover:text-white">
+              
+              <Link href={"#bio"} className="cursor-pointer my-6 group relative w-max">
                   Bio
+                <span className="px-1 relative z-10 group-hover:text-white">
                 </span>
                 <span className={className.spanHover}></span>
-              </p>
-              <p className="cursor-pointer my-6 group relative w-max">
-                <span className="px-1 relative z-10 group-hover:text-white">
+              </Link>
+              
+              
+              <Link href={"#projects"} className="cursor-pointer my-6 group relative w-max">
                   Projects
-                </span>
-                <span className={className.spanHover}></span>
-              </p>
-              <p className="cursor-pointer my-6 group relative w-max">
                 <span className="px-1 relative z-10 group-hover:text-white">
-                  Open Source
                 </span>
                 <span className={className.spanHover}></span>
-              </p>
-              <p className="cursor-pointer my-6 group relative w-max">
+              </Link>
+              
+              
+              <Link href={"contact"} className="cursor-pointer my-6 group relative w-max">
                 <span className="px-1 relative z-10 group-hover:text-white">
                   Contact
                 </span>
                 <span className={className.spanHover}></span>
-              </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -100,29 +99,22 @@ const Header = () => {
                 <div className="flex flex-col items-center space-y-2 md:flex-row">
                   <Link
                     className="underline-offset-2 hover:underline"
-                    href="#"
-                    title="Features"
+                    href="#bio"
+                    title="bio"
                   >
                     Bio
                   </Link>
                   <Link
                     className="underline-offset-2 hover:underline"
-                    href="#"
-                    title="Solutions"
+                    href="#projects"
+                    title="projects"
                   >
                     Project
                   </Link>
                   <Link
                     className="underline-offset-2 hover:underline"
-                    href="#"
-                    title="Resources"
-                  >
-                    Open Source
-                  </Link>
-                  <Link
-                    className="underline-offset-2 hover:underline"
-                    href="#"
-                    title="Pricing"
+                    href="#contact"
+                    title="contact"
                   >
                     Contact
                   </Link>

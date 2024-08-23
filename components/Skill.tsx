@@ -18,7 +18,7 @@ const Skill = () => {
         </div>
       </div>
       {/* frameworks */}
-      <div>
+      <div id="Skill">
         <div className="text-center text-xl pt-6 font-extrabold tracking-wider">
           My Frameworks
         </div>
